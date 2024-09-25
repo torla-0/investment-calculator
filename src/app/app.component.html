@@ -1,0 +1,7 @@
+<app-header />
+<app-user-input
+  (InvestmentResults)="onInvestmentResults($event)"
+  (isNegative)="checkNegative($event)"
+/>
+
+<app-investment-results [results]="results" [isNegative]="isNegative" />

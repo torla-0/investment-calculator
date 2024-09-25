@@ -1,0 +1,26 @@
+@if (isNegative) {
+<p style="text-align: center; color: red">Numbers can't be negative or zero</p>
+}@else if(annualData.length === 0 && isNegative === false) {
+<p style="text-align: center">Enter your numbers</p>
+}@else if(!isNegative){
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Investment Value</th>
+      <th>Interest (Year)</th>
+      <th>Total Interest</th>
+      <th>Invested Capital</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of annualData">
+      <td>{{ item.year }}</td>
+      <td>{{ item.valueEndOfYear | number : "1.2-2" }}</td>
+      <td>{{ item.interest | number : "1.2-2" }}</td>
+      <td>{{ item.totalInterest | number : "1.2-2" }}</td>
+      <td>{{ item.totalAmountInvested | number : "1.2-2" }}</td>
+    </tr>
+  </tbody>
+</table>
+}
